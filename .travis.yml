@@ -21,6 +21,7 @@ install:
          cabal install idris;;
          
        "osx")
+         brew update;
          brew install idris;;
          
       esac

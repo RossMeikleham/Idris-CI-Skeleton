@@ -1,14 +1,19 @@
 language: haskell
 
-ghc:
-    - 7.8
+matrix:
+  include:
+    - os: 
+        - linux
+      ghc:
+        - 7.8
+    - os:
+        - osx
+      env: TEST_SUITE=suite_3_3
 
-os:
-    - linux
-    - osx
 
 install:
-    - cabal install idris
+    - if [ "$TRAVIS_OS_NAME == osx" ] then brew install idris; fi
+    - if [ "$TRAVIS_OS_NAME == linux" ] then cabal install idris; fi
 
 script:
     - idris --build helloWorld.ipkg

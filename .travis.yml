@@ -8,12 +8,11 @@ matrix:
         - 7.8
     - os:
         - osx
-      env: TEST_SUITE=suite_3_3
 
 
 install:
-    - if [ "$TRAVIS_OS_NAME == osx" ] then brew install idris; fi
-    - if [ "$TRAVIS_OS_NAME == linux" ] then cabal install idris; fi
+    - if [ "$TRAVIS_OS_NAME == osx" ]; then brew install idris; fi
+    - if [ "$TRAVIS_OS_NAME == linux" ]; then cabal install idris; fi
 
 script:
     - idris --build helloWorld.ipkg

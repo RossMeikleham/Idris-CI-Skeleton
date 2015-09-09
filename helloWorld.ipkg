@@ -1,0 +1,6 @@
+package helloWorld
+
+modules = helloWorld
+main = helloWorld
+
+executable = helloWorld

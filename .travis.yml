@@ -1,0 +1,17 @@
+language: haskell
+
+ghc:
+    - 7.8
+
+os:
+    - linux
+    - osx
+
+install:
+    - cabal install idris
+
+script:
+    - idris --build helloWorld.ipkg
+
+after_script:
+    ./helloWorld

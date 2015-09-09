@@ -10,17 +10,17 @@ env:
 install:
     - echo $TRAVIS_OS_NAME
     - test $TRAVIS_OS_NAME = "linux" \
-        && travis_retry sudo add-apt-repository -y ppa:hvr/ghc \
-        && travis_retry sudo apt-get update \
-        && travis_retry sudo apt-get install cabal-install-$CABALVER ghc-$GHCVER \ 
-        && export PATH=$HOME/.cabal/bin:/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH \
-        && travis_retry cabal update \
-        && cabal install idris-0.9.19 --only-dependencies \
-        && travis_wait cabal install idris-0.9.19
+      && travis_retry sudo add-apt-repository -y ppa:hvr/ghc \
+      && travis_retry sudo apt-get update \
+      && travis_retry sudo apt-get install cabal-install-$CABALVER ghc-$GHCVER \ 
+      && export PATH=$HOME/.cabal/bin:/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH \
+      && travis_retry cabal update \
+      && cabal install idris-0.9.19 --only-dependencies \
+      && travis_wait cabal install idris-0.9.19
          
     - test $TRAVIS_OS_NAME = "osx" \
-        && brew update \
-        && brew install idris
+      && brew update \
+      && brew install idris
       
 script:
     - idris --build helloWorld.ipkg

@@ -19,7 +19,7 @@ install:
          export PATH=/opt/ghc/$GHCVER/bin:/opt/cabal/$CABALVER/bin:$PATH;
          cabal --version;
          cabal update;
-         travis_wait cabal install idris;;
+         cabal install idris --verbose=3;;
          
        "osx")
          brew update;

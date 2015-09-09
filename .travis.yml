@@ -11,6 +11,8 @@ matrix:
 
 
 install:
+    - echo $TRAVIS_OS_NAME
+    - sudo apt-get update -qq
     - if [ "$TRAVIS_OS_NAME == osx" ]; then brew install idris; fi
     - if [ "$TRAVIS_OS_NAME == linux" ]; then cabal install idris; fi
 

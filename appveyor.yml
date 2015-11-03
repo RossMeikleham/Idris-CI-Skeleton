@@ -1,9 +1,12 @@
 version: '{branch}-{build}'
 
+environment:
+  global:
+    SOURCE: "https://neon.se/idris/idris-win64-0.9.19.1.zip"
+    DEST: "idris64.zip"
+
 init:
-  - $source = "https://neon.se/idris/idris-win64-0.9.19.1.zip"
-  - $destination = "idris64.zip"
-  - Invoke-WebRequest $source -OutFile $destination
+  - Invoke-WebRequest %SOURCE% -OutFile %DEST%
   - 7z e idris64.zip
 
 install:

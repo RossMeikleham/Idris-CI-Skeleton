@@ -1,0 +1,20 @@
+version: '{branch}-{build}'
+
+init:
+  - $source = "https://neon.se/idris/idris-win64-0.9.19.1.zip"
+  - $destination = "idris64.zip"
+  - Invoke-WebRequest $source -OutFile $destination
+  - 7z e idris64.zip
+
+install:
+  - dir
+  - cd idris
+
+build_script:
+  - idris.exe --build helloWorld.ipkg
+  
+after_script:
+  -helloWorld.exe
+  
+
+  

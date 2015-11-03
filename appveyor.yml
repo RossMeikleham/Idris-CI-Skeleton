@@ -6,18 +6,13 @@ environment:
     - platform: x86 
       SOURCE: "https://neon.se/idris/idris-win32-0.9.19.1.zip"
       DEST: "idris.zip"
-#    - platform: x64 
-#      SOURCE: "https://neon.se/idris/idris-win64-0.9.19.1.zip"
-
+    - platform: x64 
+      SOURCE: "https://neon.se/idris/idris-win64-0.9.19.1.zip"
+      DEST: "idris.zip"
 
 install:
    - curl -o %DEST% %SOURCE%
    - 7z x %DEST%
-   - dir
- 
  
 build_script:
    - idris\idris.exe --build helloWorld.ipkg
- 
-after_build:
-   - helloWorld.exe

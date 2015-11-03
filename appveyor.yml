@@ -6,7 +6,7 @@ environment:
     DEST: "idris64.zip"
 
 init:
-  - Invoke-WebRequest %SOURCE% -OutFile %DEST%
+  - curl -o %DEST% %SOURCE%
   - 7z e idris64.zip
 
 install:

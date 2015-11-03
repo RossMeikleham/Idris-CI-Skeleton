@@ -14,6 +14,6 @@ environment:
  
 -build_script:
    - idris.exe --build helloWorld.ipkg
- -
+ 
 -after_build:
    - helloWorld.exe

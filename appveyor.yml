@@ -12,9 +12,9 @@ install:
 
 build_script:
   - idris.exe --build helloWorld.ipkg
-  
-after_script:
-  -helloWorld.exe
+
+after_build:
+  - helloWorld.exe
   
 
   

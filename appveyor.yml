@@ -10,10 +10,10 @@ environment:
    - 7z x idris64.zip
    - dir
    - cd idris
- -
+ 
+ 
 -build_script:
    - idris.exe --build helloWorld.ipkg
  -
 -after_build:
    - helloWorld.exe
-    

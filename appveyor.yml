@@ -1,9 +1,13 @@
 version: '{branch}-{build}'
 
-environment:
-  global:
-    SOURCE: "https://neon.se/idris/idris-win64-0.9.19.1.zip"
-    DEST: "idris64.zip"
+
+environment: 
+  matrix: 
+    - platform: x86 
+      SOURCE: "https://neon.se/idris/idris-win32-0.9.19.1.zip"
+#    - platform: x64 
+#      SOURCE: "https://neon.se/idris/idris-win64-0.9.19.1.zip"
+
 
 install:
    - curl -o %DEST% %SOURCE%

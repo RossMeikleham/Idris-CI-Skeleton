@@ -7,7 +7,7 @@ environment:
 
 init:
   - curl -o %DEST% %SOURCE%
-  - 7z e x idris64.zip
+  - 7z x idris64.zip
 
 install:
   - dir

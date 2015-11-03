@@ -8,15 +8,9 @@ environment:
 init:
   - curl -o %DEST% %SOURCE%
   - 7z x idris64.zip
-
-install:
   - dir
   - cd idris
-
-build_script:
   - idris.exe --build helloWorld.ipkg
-
-after_build:
   - helloWorld.exe
   
 

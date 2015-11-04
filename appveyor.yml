@@ -16,4 +16,4 @@ install:
  
 build_script:
    - idris\idris.exe --build helloWorld.ipkg
-   - helloWorld.exe
+   - dir
